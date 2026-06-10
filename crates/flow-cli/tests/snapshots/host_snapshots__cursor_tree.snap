@@ -1,0 +1,5 @@
+---
+source: crates/flow-cli/tests/host_snapshots.rs
+expression: tree
+---
+- ".cursor/rules/flow.mdc"

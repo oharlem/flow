@@ -1,0 +1,18 @@
+---
+description: Use this skill when the user mentions `$flow-status`, asks for `/flow-status`, or describes show current status, consistency findings, and next action.
+---
+
+# flow-status
+
+Use this skill when the user mentions `$flow-status`, asks for `/flow-status`, or describes show current status, consistency findings, and next action.
+
+## How to run it
+
+1. Run the canonical Flow command: `FLOW_HOST=codex flow status`. If the user supplied text after the `$flow-status` skill mention, append it after the Flow subcommand. For example, `$flow-start M-2` runs `FLOW_HOST=codex flow start M-2`.
+2. Treat the driver's stdout as authoritative Flow output. If it contains a Flow envelope, follow it exactly.
+3. Write or edit only the artifacts requested by the driver output.
+4. Do not edit `status.md` by hand and do not create repository history directly. The only allowed history-creating path is a `flow run --checkpoint <run-dir> --milestone M-N` command printed during a roadmap run with checkpoint commits enabled. If the driver output requires confirmation, wait for the user's `yes` or `y`, then run the assistant-only state-save/finalization command printed by the driver yourself. Do not ask the user to run internal flags, and do not invent or mention a public `/flow-finalize` command.
+5. If the driver is waiting for a user choice or confirmation, ask for that response and do not add a `Next command: ...` footer yet. Otherwise, when the driver prints a `Next command: ...` footer, preserve the recommended Flow command identity and render public Flow commands with Codex `$flow-*` syntax. If there is no footer, summarize the driver result without inventing one. Do not describe normal Flow state updates as worktree, dirty-file, or modified `status.md` issues.
+6. Never run `git push`, `git pull`, `git fetch`, `gh`, or `glab` as part of Flow.
+
+If `flow` is not on `PATH`, install the Flow CLI, then retry the requested skill.

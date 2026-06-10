@@ -1,0 +1,3 @@
+## Cursor Notes
+
+Flow is wired for **Cursor** (preview). Flow rules live under `.cursor/rules/flow.mdc` and describe the spec-driven workflow. Cursor rules run the installed `flow` binary with `FLOW_HOST=cursor flow <command>`.

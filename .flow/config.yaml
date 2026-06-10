@@ -1,0 +1,48 @@
+schema_version: 1.0
+confirmation: no
+prefix: flow
+hosts:
+- claude-code
+- codex
+- cursor
+git:
+  protected_branches:
+  - main
+  - master
+  - trunk
+  - develop
+  - release/*
+  worktrees: false
+  run_checkpoint_commits: true
+  run_branch: true
+test:
+  command: null
+  pre_command: null
+  timeout_seconds: 600
+preflight:
+  requirements: {}
+phases:
+  setup:
+    effort: standard
+  start:
+    effort: high
+  amend:
+    effort: high
+  plan:
+    effort: high
+  build:
+    effort: standard
+  check:
+    effort: standard
+  close:
+    effort: high
+ui:
+  voice: friendly
+  ascii_only: false
+docs:
+  touch_map: []
+  touch_map_warnings: true
+layout:
+  version: 2
+review:
+  before_finalize: false

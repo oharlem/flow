@@ -1,0 +1,25 @@
+---
+source: crates/flow-core/tests/snapshots.rs
+expression: rendered
+---
+## Consistency Check
+
+### What happened
+
+Flow checked the planning files and found no out-of-sync items.
+
+### Impact
+
+Flow did not stop for this check.
+
+### What to fix
+
+Nothing.
+
+### Nothing was changed automatically
+
+This was only a status check; no planning files were changed.
+
+### Next command
+
+`/flow-status`

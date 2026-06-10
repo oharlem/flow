@@ -1,0 +1,6 @@
+.flow/bin/flow
+.flow/conventions.md
+flow/conventions.md
+.flow/conventions/core.md
+.flow/agents/start.base.md
+flow/roadmap.md

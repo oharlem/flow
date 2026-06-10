@@ -1,0 +1,35 @@
+[package]
+name = "flow-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+description = "Host-agnostic domain logic for Flow, the spec-driven workflow toolkit."
+readme = "README.md"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+serde_yaml = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+regex = { workspace = true }
+sha2 = { workspace = true }
+chrono = { workspace = true }
+indexmap = { workspace = true }
+tempfile = { workspace = true }
+once_cell = { workspace = true }
+glob = { workspace = true }
+
+[dev-dependencies]
+insta = { version = "1", features = ["yaml"] }
+pretty_assertions = "1"
+tempfile = { workspace = true }
+criterion = "0.5"
+
+[[bench]]
+name = "bench_parsers"
+harness = false

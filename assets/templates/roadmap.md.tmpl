@@ -1,0 +1,74 @@
+# Roadmap
+
+Run-local milestones for one planned roadmap run. Each `M-N` is one planned
+chunk of work. Flow ticks `[x]` automatically when `flow close` finalizes a
+child change in the same run whose `status.md` references the milestone.
+If this roadmap was generated from a specific assignment, `/flow-roadmap` may
+write the H1 as `# Roadmap: <Descriptor>`; `flow run` uses that descriptor
+for run directories, run logs, manuals, and run branches.
+
+> **Editing rules.** This file is yours to edit within the run. Add, reorder,
+> and rephrase milestones freely, then run `flow run --rescan` before
+> continuing. Flow only ever flips a linked milestone to `[x]` during close; it
+> preserves milestone body text exactly.
+
+## How it works
+
+1. Add a milestone. `/flow-roadmap` emits the source-preserving five-field
+   heading shape:
+
+   ```markdown
+   ### [ ] M-N: Short outcome title
+
+   Source: `<source file or prompt>`, sections <section numbers/headings>.
+
+   Outcome: <one or two sentences describing delivered user value>.
+
+   Must preserve:
+   - <specific requirement, constraint, copy string, or behavior>
+
+   Done when:
+   - <observable acceptance outcome>
+   - <test or verification evidence expected>
+
+   Do not include:
+   - <explicit non-goal or deferred item>
+   ```
+
+   Short milestones may use the same heading plus a single descriptive
+   paragraph.
+
+2. Start a change linked to an existing milestone:
+   `FLOW_RUN_DIR=<run-dir> /flow-start M-N`. Flow creates a child change under
+   `flow/runs/<run>/changes/<change>/`, leaves this roadmap unchanged, and
+   records `**Milestone**: M-N` in `status.md`.
+
+3. Close the change with `/flow-close`. Flow flips the checkbox to `[x]`,
+   verifies central documentation evidence, stamps the change closed in place,
+   and updates `run.md` without creating tags. Standalone closeout does not
+   create commits.
+
+## Milestones
+
+<!-- Add milestones below. The source-preserving shape (delete this comment
+when ready):
+
+  ### [ ] M-N: Short outcome title
+
+  Source: `<source file or prompt>`, sections <section numbers/headings>.
+
+  Outcome: <one or two sentences describing delivered user value>.
+
+  Must preserve:
+  - <constraint or literal>
+
+  Done when:
+  - <observable acceptance outcome>
+
+  Do not include:
+  - <non-goal>
+
+Replace N with sequential unpadded numbers (1, 2, 3, ...). New roadmap
+generation scans existing run-local roadmaps before assigning IDs;
+`.flow/state.yaml: counter` records the next observed candidate.
+-->

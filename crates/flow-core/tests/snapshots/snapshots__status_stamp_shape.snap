@@ -1,0 +1,8 @@
+---
+source: crates/flow-core/tests/snapshots.rs
+expression: shape
+---
+change=foo
+state=Some(Building)
+branch=flow/foo
+history_actions=[plan-complete,started]

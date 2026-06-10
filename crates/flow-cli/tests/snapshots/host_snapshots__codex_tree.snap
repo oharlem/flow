@@ -1,0 +1,17 @@
+---
+source: crates/flow-cli/tests/host_snapshots.rs
+assertion_line: 137
+expression: tree
+---
+- ".agents/skills/flow-amend/SKILL.md"
+- ".agents/skills/flow-build/SKILL.md"
+- ".agents/skills/flow-build-task/SKILL.md"
+- ".agents/skills/flow-close/SKILL.md"
+- ".agents/skills/flow-doctor/SKILL.md"
+- ".agents/skills/flow-plan/SKILL.md"
+- ".agents/skills/flow-roadmap/SKILL.md"
+- ".agents/skills/flow-run/SKILL.md"
+- ".agents/skills/flow-setup/SKILL.md"
+- ".agents/skills/flow-start/SKILL.md"
+- ".agents/skills/flow-status/SKILL.md"
+- ".agents/skills/flow-test/SKILL.md"

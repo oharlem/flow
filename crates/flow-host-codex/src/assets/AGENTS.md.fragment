@@ -1,0 +1,18 @@
+## Codex Notes
+
+Flow is wired for **Codex**. Flow commands are registered as Codex skills under `.agents/skills/flow-*/`. Those skills run the installed `flow` binary.
+
+Invoke them in Codex with skill mentions:
+
+- `$flow-setup` — install or upgrade Flow for Codex.
+- `$flow-doctor` — sanity-check the local Flow installation.
+- `$flow-roadmap [source]` — decompose a PRD or notes file into Flow roadmap milestones.
+- `$flow-run [M-N]` — automate the active roadmap run end-to-end (every open milestone, or one when `M-N` is given).
+- `$flow-start <description>` — draft a new `spec.md`.
+- `$flow-amend <change request>` — update the active change `spec.md`.
+- `$flow-plan` — turn an approved spec into a plan and task list.
+- `$flow-build` — implement all remaining tasks test-first.
+- `$flow-build-task [T-NNN]` — implement one next or selected task test-first.
+- `$flow-test` — verification gate: tests + consistency checks.
+- `$flow-close` — close a completed change in place.
+- `$flow-status` — read-only report.

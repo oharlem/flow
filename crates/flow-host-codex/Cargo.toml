@@ -1,0 +1,14 @@
+[package]
+name = "flow-host-codex"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+description = "Codex host adapter for Flow."
+
+[dependencies]
+flow-core = { workspace = true }
+thiserror = { workspace = true }

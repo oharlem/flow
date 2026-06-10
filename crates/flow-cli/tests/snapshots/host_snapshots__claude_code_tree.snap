@@ -1,0 +1,18 @@
+---
+source: crates/flow-cli/tests/host_snapshots.rs
+assertion_line: 78
+expression: tree
+---
+- ".claude/settings.json"
+- ".claude/skills/flow-amend/SKILL.md"
+- ".claude/skills/flow-build/SKILL.md"
+- ".claude/skills/flow-build-task/SKILL.md"
+- ".claude/skills/flow-close/SKILL.md"
+- ".claude/skills/flow-doctor/SKILL.md"
+- ".claude/skills/flow-plan/SKILL.md"
+- ".claude/skills/flow-roadmap/SKILL.md"
+- ".claude/skills/flow-run/SKILL.md"
+- ".claude/skills/flow-setup/SKILL.md"
+- ".claude/skills/flow-start/SKILL.md"
+- ".claude/skills/flow-status/SKILL.md"
+- ".claude/skills/flow-test/SKILL.md"

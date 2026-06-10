@@ -1,0 +1,7 @@
+---
+source: crates/flow-core/tests/snapshots.rs
+expression: out
+---
+T-001 state=Open done=false covers=["FR-001"] verifies=["SC-001"] deps=[]
+T-002 state=Done done=true covers=["FR-002"] verifies=[] deps=[]
+T-003 state=AwaitingAcceptance done=false covers=["FR-003"] verifies=[] deps=["T-001", "T-002"]

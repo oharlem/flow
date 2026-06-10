@@ -1,0 +1,3 @@
+#!/bin/sh
+# Flow compatibility launcher: delegate to the installed flow on PATH.
+exec flow "$@"

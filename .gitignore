@@ -1,0 +1,33 @@
+# Rust
+/target
+**/*.rs.bk
+
+# cargo
+Cargo.lock.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Test artifacts
+**/snapshots/*.snap.new
+**/.flow-test.last.md
+.pytest_cache/
+__pycache__/
+*.py[cod]
+
+# mdbook output
+/book
+
+# Local environments
+.venv/
+
+# Embedded default assets are served from the running binary; on-disk copies
+# are version-coupled to a previous binary and should not be committed.
+# Local overrides under .flow/agents/*.local.md are still tracked.
+.flow/conventions/
+.flow/agents/*.base.md

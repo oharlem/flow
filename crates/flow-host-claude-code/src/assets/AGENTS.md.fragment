@@ -1,0 +1,17 @@
+<!-- FLOW:CLAUDE-CODE-NOTES:START -->
+## Claude Code Notes (Flow-owned)
+
+Flow owns this section. `flow setup --host claude-code` and `flow update` may refresh it.
+
+Flow is wired for **Claude Code**. Flow commands are registered as Claude Code skills under `.claude/skills/flow-*/`. Those skills run the installed `flow` binary. Invoke them with `/flow-<name>` in any Claude Code session:
+
+- `/flow-roadmap`, `/flow-run [M-N]`, `/flow-doctor`, `/flow-start`, `/flow-amend`, `/flow-plan`, `/flow-build`, `/flow-build-task`, `/flow-test`, `/flow-close`, `/flow-status` (+ auto-run `/flow-setup`).
+
+### Permissions
+
+Flow's read-only git operations are allowlisted in `.claude/settings.json`. Flow never runs `git push`, `git pull`, `git fetch`, or `gh`/`glab`; the only history exception is local roadmap-run checkpoint commits and the run-closing finalize commit when enabled.
+
+### Protected branches
+
+Flow warns (doesn't refuse) when you run it on `main`, `master`, `trunk`, `develop`, or `release/*`. Set `FLOW_FORCE_ON_PROTECTED=1` to skip the prompt.
+<!-- FLOW:CLAUDE-CODE-NOTES:END -->

@@ -1,0 +1,4 @@
+# .flow/state.yaml
+# Flow-owned mutable project state.
+schema_version: 1.0
+counter: 31

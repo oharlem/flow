@@ -1,0 +1,25 @@
+---
+source: crates/flow-core/tests/snapshots.rs
+expression: rendered
+---
+## Consistency Check
+
+### What happened
+
+Flow could not run the consistency check yet.
+
+### Why Flow stopped
+
+`tasks.md` does not exist yet. Flow needs it before it can compare the spec and task list.
+
+### What to fix
+
+Run `/flow-plan` to create `tasks.md`, then run the command again.
+
+### Nothing was changed automatically
+
+Flow did not close verification, close the change, or change these planning files.
+
+### Next command
+
+`/flow-plan`

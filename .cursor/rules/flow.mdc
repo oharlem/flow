@@ -1,0 +1,27 @@
+---
+description: Flow — spec-driven workflow toolkit
+alwaysApply: true
+---
+
+Flow is a spec-driven workflow for AI coding agents. It moves changes through
+`drafting` → `building` → `closed`.
+
+To invoke a Flow command, run the canonical Flow shape:
+
+```
+FLOW_HOST=cursor flow <command>
+```
+
+If `flow` is not on `PATH`, install the Flow CLI, then retry.
+
+Render public Flow commands with slash-command `/flow-*` syntax when
+recommending the user's next command.
+
+Supported commands: `setup`, `doctor`, `roadmap`, `run`, `run all`, `start`,
+`amend`, `plan`, `build`, `build-task`, `test`, `close`, `status`.
+
+Treat the driver's stdout as the Flow envelope and follow it exactly. Flow
+never runs `git push`, `git pull`, `git fetch`, `gh`, or `glab`. Do not create
+repository history directly; the only allowed commit path is a printed
+`flow run --checkpoint <run-dir> --milestone M-N` command during a
+roadmap run with checkpoint commits enabled.

@@ -1,0 +1,51 @@
+[package]
+name = "flow-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+description = "Spec-driven workflow toolkit for AI coding agents."
+readme = "README.md"
+
+[[bin]]
+name = "flow"
+path = "src/main.rs"
+
+[dependencies]
+flow-core = { workspace = true }
+flow-host-claude-code = { workspace = true }
+flow-host-codex = { workspace = true }
+flow-host-cursor = { workspace = true }
+clap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+serde_yaml = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+anyhow = { workspace = true }
+owo-colors = { workspace = true }
+chrono = { workspace = true }
+once_cell = { workspace = true }
+regex = { workspace = true }
+glob = { workspace = true }
+
+[dev-dependencies]
+assert_cmd = "2"
+insta = { version = "1", features = ["yaml"] }
+predicates = "3"
+tempfile = { workspace = true }
+pretty_assertions = "1"
+flow-core = { workspace = true }
+walkdir = { workspace = true }
+chrono = { workspace = true }
+
+[[example]]
+name = "generate_cli_reference"
+path = "examples/generate_cli_reference.rs"
+
+[[example]]
+name = "generate_summary"
+path = "examples/generate_summary.rs"
