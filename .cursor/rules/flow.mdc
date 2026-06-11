@@ -22,6 +22,7 @@ Supported commands: `setup`, `doctor`, `roadmap`, `run`, `run all`, `start`,
 
 Treat the driver's stdout as the Flow envelope and follow it exactly. Flow
 never runs `git push`, `git pull`, `git fetch`, `gh`, or `glab`. Do not create
-repository history directly; the only allowed commit path is a printed
+repository history directly; the only allowed commit paths are a printed
 `flow run --checkpoint <run-dir> --milestone M-N` command during a
-roadmap run with checkpoint commits enabled.
+roadmap run and the run-closing commit `flow run --finalize` creates
+itself, both with checkpoint commits enabled.

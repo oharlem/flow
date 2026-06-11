@@ -28,3 +28,7 @@ pub mod status;
 pub mod verify;
 
 pub use error::{Error, Result};
+
+/// Build source stamp used to keep Cargo git-install fingerprints commit-aware.
+#[doc(hidden)]
+pub const BUILD_GIT_SHA: &str = env!("FLOW_CORE_GIT_SHA");

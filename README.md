@@ -135,11 +135,9 @@ Flow stores work under `flow/runs/<run>/`:
 Every artifact is plain Markdown: diffable, reviewable, and repairable with
 ordinary git tools. The exact grammar is embedded in the binary; inspect it
 with `flow export-assets --dir /tmp/flow-assets`. For a complete, real
-roadmap run — two milestones, checkpoint commits, run handoff docs, and a
-captured D1 gate refusal — see
-[`examples/hello-world-run/`](./examples/hello-world-run/). Flow's own
-development history is also recorded in this repo's git log as
-`flow run checkpoint:` commits.
+roadmap run that shows checkpoint commits in practice — two milestones, run
+handoff docs, and a captured D1 gate refusal — see
+[`examples/hello-world-run/`](./examples/hello-world-run/).
 
 ## Host Adapters
 

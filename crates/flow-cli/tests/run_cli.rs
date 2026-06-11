@@ -266,6 +266,9 @@ fn t014_run_milestone_creates_run_workspace_and_envelope() {
         "# Roadmap\n\n## Milestones\n\n### [ ] M-1: Build automation\n\nDo it.\n",
     );
     commit_all(repo.path(), "roadmap");
+    let run_name = today_run_dir_name("roadmap-build-automation");
+    let expected_next =
+        format!("Current next command: `FLOW_RUN_DIR=\"flow/runs/{run_name}\" flow start M-1`");
 
     Command::cargo_bin("flow")
         .unwrap()
@@ -281,16 +284,14 @@ fn t014_run_milestone_creates_run_workspace_and_envelope() {
         .stdout(predicate::str::contains(
             "**Run finalize requires**: `release-notes.md`",
         ))
-        .stdout(predicate::str::contains(
-            "Current next command: `FLOW_RUN_DIR=\"flow/runs/20260610-roadmap-build-automation\" flow start M-1`",
-        ))
+        .stdout(predicate::str::contains(expected_next))
         .stdout(predicate::str::contains("flow run --finalize"))
         .stdout(predicate::str::contains("Next command: `flow run`"));
 
     let dirs = run_dirs(repo.path());
     assert_eq!(dirs.len(), 1);
-    let run_name = dirs[0].file_name().unwrap().to_string_lossy();
-    assert_eq!(run_name, today_run_dir_name("roadmap-build-automation"));
+    let actual_run_name = dirs[0].file_name().unwrap().to_string_lossy();
+    assert_eq!(actual_run_name, run_name);
     assert!(dirs[0].join("run.md").is_file());
     assert!(dirs[0].join("log.md").is_file());
     assert!(dirs[0].join("manual.md").is_file());
